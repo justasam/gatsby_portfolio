@@ -32,3 +32,10 @@ collections:
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
+      - {
+          name: tags,
+          label: Tags,
+          widget: list,
+          allow_add: false,
+          default: ["React", "Redux", "TypeScript"],
+        }
