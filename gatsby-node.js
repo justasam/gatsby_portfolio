@@ -29,6 +29,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    let pageType = node.frontmatter.path.split('/')[1] // path is in the form of /blog/post-slug
+
     createPage({
       path: node.frontmatter.path,
       component: blogPostTemplate,

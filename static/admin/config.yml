@@ -6,7 +6,7 @@ public_folder: assets
 collections:
   - name: blog
     label: blog
-    folder: src/markdown-pages
+    folder: src/blog-md
     create: true
     fields:
       - {
@@ -14,6 +14,20 @@ collections:
           label: Path,
           pattern: ['/blog/(\w+-*)+\S$', "Must be in format /blog/post-slug"],
           default: "/blog/",
+        }
+      - { name: date, label: Date, widget: datetime }
+      - { name: title, label: Title }
+      - { name: body, label: Body, widget: markdown }
+  - name: work
+    label: work
+    folder: src/work-md
+    create: true
+    fields:
+      - {
+          name: path,
+          label: Path,
+          pattern: ['/work/(\w+-*)+\S$', "Must be in format /work/work-slug"],
+          default: "/work/",
         }
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
