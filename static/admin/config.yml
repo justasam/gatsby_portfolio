@@ -33,9 +33,15 @@ collections:
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
       - {
+          name: images,
+          label: Images,
+          widget: image,
+          media_library: { config: { multiple: true } },
+        }
+      - {
           name: tags,
           label: Tags,
-          widget: list,
-          allow_add: false,
-          default: ["React", "Redux", "TypeScript"],
+          widget: select,
+          multiple: true,
+          options: ["React", "Redux", "TypeScript"],
         }
